@@ -1,5 +1,4 @@
 from base.base_page import BasePage
-from config.links import Links
 from selenium.webdriver.support import expected_conditions as EC
 
 class ProductPage(BasePage):
@@ -52,11 +51,3 @@ class ProductPage(BasePage):
 
     def click_on_popup_close_button(self):
         self.wait.until(EC.element_to_be_clickable(self.POPUP_CLOSE_BUTTON)).click()
-# old_price = wait.until(EC.visibility_of_element_located(OLD_PRICE))
-# assert old_price.text == "₹600.00", "Старая цена не соответствует ожидаемой"
-#
-# new_price = wait.until(EC.visibility_of_element_located(NEW_PRICE))
-# assert new_price.text == "₹450.00", "Старая цена не соответствует ожидаемой"
-#
-# wait.until(EC.element_to_be_clickable(COVER_BOOK)).click()
-# wait.until(EC.element_to_be_clickable(POPUP_CLOSE_BUTTON)).click()
