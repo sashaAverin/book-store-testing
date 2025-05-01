@@ -22,9 +22,6 @@ class BasePage:
     def is_opened(self):
         self.wait.until(EC.url_to_be(self.PAGE_URL))
 
-    # def scroll_page_down_600px(self):
-    #     self.driver.execute_script("window.scrollTo(0, 600)")
-
     def click_on_my_account_link(self):
         self.driver.find_element(*self.MY_ACCOUNT_LINK).click()
 
