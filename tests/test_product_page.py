@@ -41,4 +41,3 @@ class TestProductPage(BaseTest):
         self.product_page.check_new_price("₹450.00", "Старая цена не соответствует ожидаемой")
         self.product_page.click_on_cover_of_book()
         self.product_page.click_on_popup_close_button()
-

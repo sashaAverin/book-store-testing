@@ -22,7 +22,6 @@ class CheckoutPage(BasePage):
     PAYMENT_METHOD_RADIO = ("xpath", "//input[@id='payment_method_cheque']")
     ORDER_BUTTON = ("xpath", "//input[@id='place_order']")
 
-
     def enter_first_name(self, name):
         self.wait.until(EC.element_to_be_clickable(self.FIRST_NAME_FIELD)).send_keys(name)
 
