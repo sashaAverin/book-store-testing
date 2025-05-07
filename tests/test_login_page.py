@@ -7,7 +7,7 @@ class TestLoginPage(BaseTest):
 
     @allure.title("Registration in system")
     @allure.severity("Critical")
-    @pytest.mark.reg
+    @pytest.mark.smoke
     def test_registration_on_website(self):
         self.login_page.open()
         self.login_page.is_opened()
