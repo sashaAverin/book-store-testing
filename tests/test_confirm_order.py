@@ -1,8 +1,14 @@
-from base.base_test import BaseTest
+import allure
+import pytest
 import random
+from base.base_test import BaseTest
 
+@allure.feature("Order")
 class TestConfirmOrderPage(BaseTest):
 
+    @allure.title("Confirmation of order")
+    @allure.severity("Critical")
+    @pytest.mark.smoke
     def test_order(self):
         self.main_page.open()
         self.main_page.is_opened()
@@ -29,3 +35,4 @@ class TestConfirmOrderPage(BaseTest):
         self.checkout_page.click_on_order_button()
         self.confirm_order_page.check_confirm_message("Thank you. Your order has been received.", "Текст сообщения с подтверждением не верный")
         self.confirm_order_page.check_payment_method("Check Payments", "Отображается не верный способ доставки товара")
+        self.confirm_order_page.make_screenshot("Success")

@@ -1,7 +1,13 @@
+import allure
+import pytest
 from base.base_test import BaseTest
 
+@allure.feature("Product page features")
 class TestProductPage(BaseTest):
 
+    @allure.title("Write the review")
+    @allure.severity("Major")
+    @pytest.mark.functional
     def test_product_review(self):
         self.main_page.open()
         self.main_page.is_opened()
@@ -12,7 +18,11 @@ class TestProductPage(BaseTest):
         self.product_page.fill_in_name_field("Test")
         self.product_page.fill_in_email_field("test@gmail.com")
         self.product_page.click_on_submit_button()
+        self.product_page.make_screenshot("Review")
 
+    @allure.title("Check title of product")
+    @allure.severity("Major")
+    @pytest.mark.functional
     def test_check_title_of_product(self):
         self.main_page.open()
         self.main_page.is_opened()
@@ -25,7 +35,11 @@ class TestProductPage(BaseTest):
         self.main_page.click_on_shop_link()
         self.catalog_page.open_html_five_product_page()
         self.product_page.check_title_text("HTML5 Forms")
+        self.product_page.make_screenshot("Title")
 
+    @allure.title("Check sale price of product")
+    @allure.severity("Major")
+    @pytest.mark.functional
     def test_check_sale_of_product(self):
         self.main_page.open()
         self.main_page.is_opened()
@@ -41,3 +55,4 @@ class TestProductPage(BaseTest):
         self.product_page.check_new_price("₹450.00", "Старая цена не соответствует ожидаемой")
         self.product_page.click_on_cover_of_book()
         self.product_page.click_on_popup_close_button()
+        self.product_page.make_screenshot("Sale")

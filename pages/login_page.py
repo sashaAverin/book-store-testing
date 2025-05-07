@@ -1,6 +1,11 @@
+import random
+import time
+import allure
 from base.base_page import BasePage
 from config.links import Links
+
 from selenium.webdriver.support import expected_conditions as EC
+
 class LoginPage(BasePage):
 
     PAGE_URL = Links.LOGIN_PAGE
@@ -14,25 +19,33 @@ class LoginPage(BasePage):
     REG_BUTTON = ("xpath", "//input[@name='register']")
     WELCOME_MESSAGE = ("xpath", "//div[@class='woocommerce-MyAccount-content']")
 
+    @allure.step("Enter registration email")
     def enter_registration_email(self, email):
-        self.wait.until(EC.element_to_be_clickable(self.EMAIL_REG_FIELD)).send_keys(email)
+        reg_email = self.wait.until(EC.element_to_be_clickable(self.EMAIL_REG_FIELD))
+        reg_email.send_keys(f"{email}{random.randint(100, 999)}@gmail.com")
 
+    @allure.step("Enter registration password")
     def enter_registration_password(self, password):
-        reg_password = self.wait.until(EC.element_to_be_clickable(self.PASSWORD_REG_FIELD))
-        reg_password.send_keys(password)
-        reg_password.send_keys("A")
+        password_input = self.wait.until(EC.element_to_be_clickable(self.PASSWORD_REG_FIELD))
+        time.sleep(3)
+        password_input.send_keys(password)
 
+    @allure.step("Click submit button")
     def click_on_registration_button(self):
         self.wait.until(EC.element_to_be_clickable(self.REG_BUTTON)).click()
 
+    @allure.step("Enter login")
     def enter_username(self, login):
         self.wait.until(EC.element_to_be_clickable(self.USERNAME_FIELD)).send_keys(login)
 
+    @allure.step("Enter password")
     def enter_password(self, password):
         self.wait.until(EC.element_to_be_clickable(self.PASSWORD_FIELD)).send_keys(password)
 
+    @allure.step("Click submit button")
     def click_on_login_button(self):
         self.wait.until(EC.element_to_be_clickable(self.LOGIN_BUTTON)).click()
 
+    @allure.step("Registration has been successfully")
     def waiting_for_welcome_message(self):
         self.wait.until(EC.visibility_of_element_located(self.WELCOME_MESSAGE))
