@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","11912","Count filtered items on the page","tests","Wed May 07 11:23:49 GMT 2025","passed","Wed May 07 11:24:01 GMT 2025","TestCatalog","test_catalog","",""
+"","8376","Write the review","tests","Wed May 07 11:24:19 GMT 2025","passed","Wed May 07 11:24:27 GMT 2025","TestProductPage","test_product_page","",""
+"","13118","Check total and subtotal price","tests","Wed May 07 11:23:12 GMT 2025","passed","Wed May 07 11:23:25 GMT 2025","TestCartPage","test_cart_page","",""
+"","13329","Check sale price of product","tests","Wed May 07 11:24:44 GMT 2025","passed","Wed May 07 11:24:57 GMT 2025","TestProductPage","test_product_page","",""
+"","17941","Check total and subtotal price","tests","Wed May 07 11:23:28 GMT 2025","passed","Wed May 07 11:23:46 GMT 2025","TestCartPage","test_cart_page","",""
+"","10961","Check title of product","tests","Wed May 07 11:24:30 GMT 2025","passed","Wed May 07 11:24:41 GMT 2025","TestProductPage","test_product_page","",""
+"","12381","Sorting of products","tests","Wed May 07 11:24:04 GMT 2025","passed","Wed May 07 11:24:16 GMT 2025","TestCatalog","test_catalog","",""
