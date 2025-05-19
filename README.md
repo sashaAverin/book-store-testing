@@ -1,27 +1,52 @@
-# Book-store-testing
+# <p align=center>Project of automation UI testing of online<br>bookstore for QA engineers practice</p>
 
-Итоговая работа на курсе по автоматизации тестирования.
+## :feet: Contents
++ [Project goal](#dart-project-goal)
++ [Technologies and tools](#gear-technologies-and-tools)
++ [List of implemented tests](#white_check_mark-list-of-implemented-tests)
++ [GitHub Actions CI](#rocket-github-actions-ci)
++ [Test results in Allure Report](#bar_chart-test-results-in-allure-report)
++ [Example of passing the test](#eyes-example-of-passing-the-test)
 
-Тесты написаны с использованием паттерна Page Object Model. <br>
-Использован Allure для создания отчёта тестирования, а также фреймворк Pytest.
+# :dart: Project goal
+Diploma work on test automation course. The goal of this project is demonstration of skills in automation testing
 
-<b>Протестировано:</b>
+# :gear: Technologies and tools
+![](source/PyCharm.svg)
+![](source/Selenium.svg)
+![](source/Pytest.svg)
+![](source/Chrome.svg)
+![](source/Allure.svg)
+![](source/GitHub.svg)
+![](source/Git.svg)
 
-- Регистрация пользователя в системе;
-- Авторизация пользователя;
-- Проверка соответствия информации о товаре;
-- Написание отзыва о товаре;
-- Добавление товара в корзину;
-- Проверка промежуточной и полной стоимости товаров в корзине;
-- Действия в корзине (изменение количества товара, удаление, пересчёт стоимости);
-- Оформление заказа.
+# :white_check_mark: List of implemented tests
++ User registration in the system
++ User authorization
++ Checking the conformity of product information
++ Writing a review of the product
++ Adding a product to the cart
++ Checking the subtotal and total cost of products in the cart
++ Actions in the cart (changing the quantity of products, deleting, recalculating the cost)
++ Placing an order
 
-В проекте протестированы исчезающие элементы на странице (overlay). <br>
-Для большей стабильности тесты написаны с использованием явных ожиданий. <br>
-Данные для входа в систему вынесены в отдельный файл .env для большей безопасности (файл намеренно не помещён в .gitignore для наглядности). <br>
-Используется валидация данных (стоимость и количество товара) с помощью assert. <br>
-Запуск браузера происходит с использованием блокировщика рекламы (файл adblocker.crx).
+# :rocket: GitHub Actions CI
+Tests are launched using GitHub Actions. The trigger for launching is workflow dispatch where you can choose a type of tests
 
-Создан <b>CI</b> с помощью GitHub Actions. <br>
-Тест запускается с помощью триггера "workflow_dispatch", в котором можно выбрать тип запускаемых тестов. <br>
-После завершения тестирования создается Allure отчёт, а затем происходит его деплой <b>c историей предыдущих запусков </b> на GitHub Pages.
+# :bar_chart: Test results in Allure Report
+Allure report with the history of previous launches is automatically generated after passing the tests
+
+Result of running tests
+
+![](source/Result.png)
+
+List of the tests
+
+![](source/List.png)
+
+Passing the test
+
+![](source/Passing.png)
+
+# :eyes: Example of passing the test
+![](source/Gif.gif)
